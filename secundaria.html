@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secundaria | Centro Comunitario del Desarrollo Infantil Vocación por la Niñes</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    background:linear-gradient(135deg,#d81b43,#ff5f7e);
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo h1{
+    color:white;
+    font-size:32px;
+}
+
+.logo p{
+    color:white;
+    font-size:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffe082;
+}
+
+/* HERO */
+
+.hero{
+    min-height:70vh;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('/imagen/secundaria.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-text{
+    color:white;
+    max-width:850px;
+}
+
+.hero-text h1{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:24px;
+    line-height:1.6;
+}
+<!-- LOGO -->
+<div class="logo-img">
+    <img src="logo.jpg" alt="Logo Colegio">
+</div>
+
+/* SECCIONES */
+
+.section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:50px;
+    color:#d81b43;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    font-size:20px;
+    color:#555;
+}
+
+/* TARJETAS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#d81b43;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.card ul{
+    padding-left:20px;
+    line-height:2;
+}
+
+/* CAMPOS */
+
+.campos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.campo{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.campo:hover{
+    transform:scale(1.03);
+}
+
+.campo h3{
+    margin-bottom:20px;
+    font-size:26px;
+}
+
+.campo ul{
+    line-height:2;
+    padding-left:20px;
+}
+
+.verde{
+    border-top:10px solid #7cc242;
+}
+
+.azul{
+    border-top:10px solid #29a9e1;
+}
+
+.rosa{
+    border-top:10px solid #ff4fa3;
+}
+
+.amarillo{
+    border-top:10px solid #f6c600;
+}
+
+/* TALLERES */
+
+.talleres{
+    background:white;
+    margin-top:50px;
+    padding:45px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.talleres h2{
+    color:#d81b43;
+    margin-bottom:25px;
+    font-size:40px;
+}
+
+.talleres ul{
+    list-style:none;
+    font-size:22px;
+    line-height:2;
+}
+
+/* REQUISITOS */
+
+.requisitos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.req{
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.req h3{
+    color:#29a9e1;
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+.req ul{
+    padding-left:20px;
+    line-height:2;
+    font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h2{
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+footer p{
+    margin-top:10px;
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:10px;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .hero-text p{
+        font-size:20px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h1>Secundaria</h1>
+<p>Centro Comunitario del Desarrollo Infantil Vocación por la Niñes</p>
+</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="#modelo">Modelo Educativo</a>
+<a href="#requisitos">Requisitos</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Secundaria</h1>
+
+<p>
+Formamos alumnos responsables, creativos y seguros
+mediante métodos innovadores y educación integral.
+</p>
+
+</div>
+
+</section>
+
+<!-- METODOS -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+Métodos de Enseñanza
+</h2>
+
+<p>
+Aprendizaje moderno enfocado en el desarrollo integral.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+METODO REGGIO EMILIA
+</h3>
+
+<p>
+Este metodo educativo actual
+esta centrado en los intereses
+de los alumnos. Las clases se centran
+en proyectos y en el autodescubrimiento.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Metodo Flipped Classroom
+</h3>
+
+<p>
+Modelo pedagogico que se basa en invertir 
+determinados procedimientos del proceso
+de enseñanza y aprendizaje, asi mismo 
+transferir algunos aspectos a contextos
+exteriores al aula. 
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MODELO EDUCATIVO -->
+
+<section class="section" id="modelo">
+
+<div class="section-title">
+
+<h2>
+Nueva Escuela Mexicana 2023
+</h2>
+
+<p>
+Campos formativos y talleres educativos.
+</p>
+
+</div>
+
+<div class="campos">
+
+<div class="campo verde">
+
+<h3>
+1. Lenguajes
+</h3>
+
+<ul>
+<li>Español</li>
+<li>Inglés</li>
+<li>Artes</li>
+</ul>
+
+</div>
+
+<div class="campo azul">
+
+<h3>
+2. Saberes y Pensamiento Científico
+</h3>
+
+<ul>
+<li>Matemáticas</li>
+<li>Biología</li>
+<li>Física y Química</li>
+<li>Tecnología</li>
+</ul>
+
+</div>
+
+<div class="campo rosa">
+
+<h3>
+3. Ética, Naturaleza y Sociedad
+</h3>
+
+<ul>
+<li>Geografía</li>
+<li>Historia</li>
+<li>Formación Cívica y Ética</li>
+</ul>
+
+</div>
+
+<div class="campo amarillo">
+
+<h3>
+4. De lo Humano y lo Comunitario
+</h3>
+
+<ul>
+<li>Educación Física</li>
+<li>Vida Saludable</li>
+<li>Socioemocional</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REQUISITOS -->
+
+<section class="section" id="requisitos">
+
+<div class="section-title">
+
+<h2>
+Requisitos de Inscripción
+</h2>
+
+<p>
+Documentación necesaria para alumnos y tutores.
+</p>
+
+</div>
+
+<div class="requisitos">
+
+<div class="req">
+
+<h3>
+Para los niños
+</h3>
+
+<ul>
+<li>Acta de nacimiento</li>
+<li>Cartilla de Vacunación</li>
+<li>CURP (Formato Nuevo, al 200%)</li>
+<li>Cartilla de evaluación de grados cursados</li>
+<li>Certificado médico</li>
+<li>2 fotografías tamaño infantil</li>
+<li>Todo en 4 copias</li>
+</ul>
+
+</div>
+
+<div class="req">
+
+<h3>
+Padre de familia o tutor
+</h3>
+
+<ul>
+<li>Comprobante de domicilio</li>
+<li>INE</li>
+<li>CURP actualizado</li>
+<li>Acta de nacimiento</li>
+<li>Todo en 4 copias</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>
+Centro Comunitario del Desarrollo Infantil Vocación por la Niñes
+</h2>
+
+<p>
+Poniente 14 Manzana 64 Lote 9,
+Colonia San Miguel Xico 3ra Sección,
+Valle de Chalco Solidaridad,
+Estado de México.
+</p>
+
+<p>
+© 2026 Todos los derechos reservados a: ING. Omar Román Pérez.
+</p>
+
+</footer>
+
+</body>
+</html>
