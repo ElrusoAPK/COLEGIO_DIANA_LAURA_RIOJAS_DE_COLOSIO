@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/</loc>
-<priority>1.0</priority>
-</url>
+  <url>
+    <loc>https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/kinder.html</loc>
+  </url>
+
+  <url>
+    <loc>https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/primaria.html</loc>
+  </url>
+
+  <url>
+    <loc>https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/secundaria.html</loc>
+  </url>
 
 </urlset>
