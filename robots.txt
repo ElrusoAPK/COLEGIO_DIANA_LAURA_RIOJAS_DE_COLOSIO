@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://elrusoapk.github.io/COLEGIO_DIANA_LAURA_RIOJAS_DE_COLOSIO/sitemap.xml
