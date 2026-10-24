@@ -552,6 +552,11 @@ body.halloween-mode .box:hover,body.halloween-mode .campo:hover,body.halloween-m
 body.halloween-mode{background:#fff8ed;color:#2a183b}
 body.halloween-mode header{background:linear-gradient(105deg,#1b102b 0%,#42205e 65%,#713c85 100%)!important;color:#fff;box-shadow:0 8px 28px #1b102b40;border-bottom:3px solid #ff8a24}
 body.halloween-mode nav a,body.halloween-mode .dropbtn{color:#fff!important}
+/* FIX: opciones del desplegable Niveles visibles sobre fondo blanco */
+body.halloween-mode .dropdown-content{background:#fffaf2!important;min-width:220px;z-index:3000;border:2px solid #ffb347;box-shadow:0 16px 35px #21153245}
+body.halloween-mode .dropdown-content a{display:block!important;color:#2a183b!important;background:#fffaf2!important;padding:16px 20px!important;font-weight:700!important;white-space:nowrap}
+body.halloween-mode .dropdown-content a:hover,body.halloween-mode .dropdown-content a:focus{background:#ff8a24!important;color:#211532!important}
+.dropdown-content.show{display:block!important;visibility:visible!important;opacity:1}
 body.halloween-mode nav a:hover,body.halloween-mode .dropbtn:hover{color:#ffd166!important}
 body.halloween-mode .hero{background-image:radial-gradient(circle at 85% 20%,#ff8a2440 0,transparent 28%),linear-gradient(135deg,rgba(27,16,43,.88),rgba(66,32,94,.82)),url('https://images.unsplash.com/photo-1509557965875-b88c97052f0e?q=80&w=1600');background-position:center;background-size:cover;color:white}
 body.halloween-mode .hero-text h1,body.halloween-mode .hero-text p{color:#fff}
