@@ -315,10 +315,39 @@ body.halloween-mode .box:hover,body.halloween-mode .campo:hover,body.halloween-m
 @keyframes spookyRise{from{opacity:1;transform:translateY(0) rotate(0)}to{opacity:0;transform:translateY(-100px) rotate(25deg)}}
 @media(prefers-reduced-motion:reduce){.halloween-ribbon span,.halloween-spark{animation:none!important}.halloween-toggle{transition:none}}
 
+
+/* TEMA HALLOWEEN PREDETERMINADO: visible desde la primera visita */
+body.halloween-mode{background:#fff8ed;color:#2a183b}
+body.halloween-mode header{background:linear-gradient(105deg,#1b102b 0%,#42205e 65%,#713c85 100%)!important;color:#fff;box-shadow:0 8px 28px #1b102b40;border-bottom:3px solid #ff8a24}
+body.halloween-mode nav a,body.halloween-mode .dropbtn{color:#fff!important}
+body.halloween-mode nav a:hover,body.halloween-mode .dropbtn:hover{color:#ffd166!important}
+body.halloween-mode .hero{background-image:radial-gradient(circle at 85% 20%,#ff8a2440 0,transparent 28%),linear-gradient(135deg,rgba(27,16,43,.88),rgba(66,32,94,.82)),url('https://images.unsplash.com/photo-1509557965875-b88c97052f0e?q=80&w=1600');background-position:center;background-size:cover;color:white}
+body.halloween-mode .hero-text h1,body.halloween-mode .hero-text p{color:#fff}
+body.halloween-mode .hero-text h3{color:#ffd166}
+body.halloween-mode .hero-text span{color:#ff9b35;text-shadow:0 3px 0 #0002}
+body.halloween-mode .btn1,body.halloween-mode .btn2{background:linear-gradient(135deg,#ff8a24,#ffd166);color:#271536;border:0;box-shadow:0 8px 24px #ff8a2440}
+body.halloween-mode .section:nth-of-type(even){background:linear-gradient(180deg,#fff8ed,#f3e8ff)}
+body.halloween-mode .section-title h2{color:#6e328e;text-shadow:0 3px 0 #ff8a241c}
+body.halloween-mode .section-title p{color:#62516e}
+body.halloween-mode .box,body.halloween-mode .campo,body.halloween-mode .req,body.halloween-mode .talleres,body.halloween-mode .contact-box{background:linear-gradient(145deg,#fff,#fff8ed);border:1px solid #ead7f7;border-top:6px solid #ff8a24;box-shadow:0 15px 35px #32144915}
+body.halloween-mode .campo h3,body.halloween-mode .box h2,body.halloween-mode .req h3{color:#713c85}
+body.halloween-mode .contact-card{background:linear-gradient(145deg,#fff4df,#f4e8ff)!important;border:2px solid #ffcf8a!important}
+body.halloween-mode .contact-card h4{color:#713c85}
+body.halloween-mode footer{background:radial-gradient(circle at 50% 0,#593078,#1b102b 70%);border-top:5px solid #ff8a24}
+body.halloween-mode .halloween-ribbon{background:linear-gradient(90deg,#1b102b,#713c85,#1b102b);border-bottom:3px solid #ffd166;font-size:clamp(12px,1.6vw,16px);padding:15px}
+body.halloween-mode .halloween-toggle{background:linear-gradient(135deg,#ff8a24,#ffd166);color:#271536;border:2px solid white;box-shadow:0 10px 28px #21153250}
+body.halloween-mode .halloween-card{border-radius:24px}
+body.halloween-mode .halloween-card:hover{outline:2px solid #ffbd62;outline-offset:2px}
+body.halloween-mode .logo img{filter:drop-shadow(0 0 8px #ffd16655)}
+body.halloween-mode .card{border:3px solid #ffd166}
+body.halloween-mode .section-title h2:after{content:"  ✦ 🎃";font-size:.58em;color:#ff8a24}
+body.halloween-mode .halloween-ribbon span{font-size:1.25em;margin:0 8px}
+@media(max-width:700px){body.halloween-mode .hero{background-position:center}body.halloween-mode .halloween-toggle{right:10px;bottom:10px;padding:10px 12px;font-size:12px}}
+
 </style>
 </head>
 
-<body>
+<body class="halloween-mode">
 
 <header>
 
@@ -338,7 +367,7 @@ body.halloween-mode .box:hover,body.halloween-mode .campo:hover,body.halloween-m
 </header>
 
 <div class="halloween-ribbon" role="note"><span>🎃</span> Octubre mágico · ¡Aprendemos, creamos y nos divertimos! <span>🦇</span></div>
-<button class="halloween-toggle" id="halloweenToggle" type="button" aria-pressed="false" aria-label="Activar o desactivar el modo Halloween">🎃 Modo Halloween</button>
+<button class="halloween-toggle" id="halloweenToggle" type="button" aria-pressed="true" aria-label="Activar o desactivar el modo Halloween">✨ Halloween activado</button>
 <script>
 (function(){
   var toggle=document.getElementById('halloweenToggle');
