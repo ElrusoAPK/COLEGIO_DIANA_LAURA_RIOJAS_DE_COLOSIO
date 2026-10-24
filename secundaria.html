@@ -295,6 +295,27 @@ footer p{
 
 }
 
+
+/* EDICIÓN HALLOWEEN INTEGRADA */
+:root{--halloween-night:#211532;--halloween-purple:#593078;--halloween-orange:#ff8a24;--halloween-gold:#ffd166}
+.halloween-ribbon{position:relative;z-index:2;text-align:center;padding:12px 18px;background:linear-gradient(90deg,var(--halloween-night),var(--halloween-purple),var(--halloween-night));color:#fff3dc;font-weight:800;letter-spacing:.3px;border-bottom:3px solid var(--halloween-orange)}
+.halloween-ribbon span{display:inline-block;animation:spookyBob 2.8s ease-in-out infinite}
+.halloween-card{position:relative;overflow:hidden}
+.halloween-card:after{content:"✦";position:absolute;right:16px;top:10px;color:#ff9b35;font-size:22px;opacity:.75;transition:transform .3s}
+.halloween-card:hover:after{transform:rotate(90deg) scale(1.25)}
+.halloween-toggle{position:fixed;right:18px;bottom:18px;z-index:2000;border:2px solid #ffd166;border-radius:999px;background:#211532;color:#fff;padding:12px 16px;font:700 14px inherit;box-shadow:0 8px 24px #21153240;cursor:pointer;transition:transform .2s,background .2s}
+.halloween-toggle:hover{transform:translateY(-4px) rotate(-2deg);background:#593078}
+.halloween-toggle:focus-visible{outline:3px solid #ff8a24;outline-offset:4px}
+body.halloween-mode{background:#fff8ed;color:#2b1a3b}
+body.halloween-mode header{background:linear-gradient(110deg,#211532,#593078)!important;color:white}
+body.halloween-mode .section-title h2,body.halloween-mode .hero-text h3,body.halloween-mode .contact-card h4{color:#a653d4}
+body.halloween-mode .box,body.halloween-mode .campo,body.halloween-mode .req,body.halloween-mode .contact-card{border-color:#ffd166;box-shadow:0 12px 30px #59307818}
+body.halloween-mode .box:hover,body.halloween-mode .campo:hover,body.halloween-mode .contact-card:hover{transform:translateY(-8px) rotate(-.4deg)}
+.halloween-spark{position:fixed;z-index:1999;pointer-events:none;font-size:22px;animation:spookyRise 1.8s ease-out forwards}
+@keyframes spookyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes spookyRise{from{opacity:1;transform:translateY(0) rotate(0)}to{opacity:0;transform:translateY(-100px) rotate(25deg)}}
+@media(prefers-reduced-motion:reduce){.halloween-ribbon span,.halloween-spark{animation:none!important}.halloween-toggle{transition:none}}
+
 </style>
 </head>
 
@@ -314,6 +335,32 @@ footer p{
 </nav>
 
 </header>
+
+<div class="halloween-ribbon" role="note"><span>🎃</span> Octubre mágico · ¡Aprendemos, creamos y nos divertimos! <span>🦇</span></div>
+<button class="halloween-toggle" id="halloweenToggle" type="button" aria-pressed="false" aria-label="Activar o desactivar el modo Halloween">🎃 Modo Halloween</button>
+<script>
+(function(){
+  var toggle=document.getElementById('halloweenToggle');
+  if(!toggle)return;
+  toggle.addEventListener('click',function(){
+    var active=document.body.classList.toggle('halloween-mode');
+    toggle.setAttribute('aria-pressed',String(active));
+    toggle.textContent=active?'✨ Modo mágico activado':'🎃 Modo Halloween';
+    if(active){
+      ['👻','🦇','✨','🎃','🍬'].forEach(function(symbol,index){
+        var spark=document.createElement('span');
+        spark.className='halloween-spark';
+        spark.textContent=symbol;
+        spark.style.left=(12+index*17)+'%';
+        spark.style.bottom='28px';
+        document.body.appendChild(spark);
+        window.setTimeout(function(){spark.remove()},1900);
+      });
+    }
+  });
+})();
+</script>
+
 
 <!-- HERO -->
 
@@ -401,9 +448,9 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campos">
+<div class="campos halloween-card">
 
-<div class="campo verde">
+<div class="campo verde halloween-card">
 
 <h3>
 1. Lenguajes
@@ -417,7 +464,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo azul">
+<div class="campo azul halloween-card">
 
 <h3>
 2. Saberes y Pensamiento Científico
@@ -432,7 +479,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo rosa">
+<div class="campo rosa halloween-card">
 
 <h3>
 3. Ética, Naturaleza y Sociedad
@@ -446,7 +493,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo amarillo">
+<div class="campo amarillo halloween-card">
 
 <h3>
 4. De lo Humano y lo Comunitario
@@ -480,9 +527,9 @@ Documentación necesaria para alumnos y tutores.
 
 </div>
 
-<div class="requisitos">
+<div class="requisitos halloween-card">
 
-<div class="req">
+<div class="req halloween-card">
 
 <h3>
 Para los niños
@@ -500,7 +547,7 @@ Para los niños
 
 </div>
 
-<div class="req">
+<div class="req halloween-card">
 
 <h3>
 Padre de familia o tutor
