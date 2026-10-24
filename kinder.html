@@ -344,6 +344,26 @@ body.halloween-mode .section-title h2:after{content:"  ✦ 🎃";font-size:.58em
 body.halloween-mode .halloween-ribbon span{font-size:1.25em;margin:0 8px}
 @media(max-width:700px){body.halloween-mode .hero{background-position:center}body.halloween-mode .halloween-toggle{right:10px;bottom:10px;padding:10px 12px;font-size:12px}}
 
+
+/* CLUB INTERACTIVO: criaturas que abren paneles y retos */
+.dlm-creatures{position:fixed;left:14px;bottom:14px;z-index:2500;display:flex;gap:8px;flex-wrap:wrap;max-width:calc(100vw - 28px)}
+.dlm-creature{border:2px solid #ffd166;background:#241333;color:#fff;border-radius:18px;padding:9px 12px;font:700 14px inherit;cursor:pointer;box-shadow:0 5px 16px #21153240;transition:transform .2s}
+.dlm-creature:hover,.dlm-creature:focus-visible{transform:translateY(-4px) rotate(-2deg);outline:3px solid #ff8a24;outline-offset:2px}
+.dlm-panel{display:none;position:fixed;inset:0;z-index:4000;background:#160c24b8;padding:18px;align-items:center;justify-content:center}
+.dlm-panel.open{display:flex}
+.dlm-dialog{position:relative;width:min(620px,100%);max-height:85vh;overflow:auto;background:linear-gradient(145deg,#fffaf0,#f4e8ff);color:#29163b;border:3px solid #ff9a2f;border-radius:24px;padding:25px;box-shadow:0 20px 70px #0005}
+.dlm-dialog h2{font-size:clamp(22px,4vw,32px);color:#633080;margin:0 42px 12px 0}
+.dlm-dialog p,.dlm-dialog li{line-height:1.65}
+.dlm-close{position:absolute;right:14px;top:12px;border:0;border-radius:50%;width:38px;height:38px;background:#2a173b;color:white;font-size:23px;cursor:pointer}
+.dlm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.dlm-choice,.dlm-next{border:0;border-radius:13px;background:#67358a;color:white;font-weight:700;padding:12px 15px;cursor:pointer}
+.dlm-choice:hover,.dlm-next:hover{background:#ff8a24;color:#211532}
+.dlm-feedback{font-weight:700;min-height:28px;margin-top:12px;padding:8px;border-radius:10px;background:#fff}
+.dlm-progress{height:9px;border-radius:99px;background:#e5d6ef;overflow:hidden;margin:12px 0}
+.dlm-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff8a24,#ffd166);transition:width .3s}
+@media(max-width:520px){.dlm-creatures{left:8px;bottom:8px;gap:5px}.dlm-creature{font-size:12px;padding:8px 9px}.dlm-dialog{padding:20px 16px}}
+@media(prefers-reduced-motion:reduce){.dlm-creature,.dlm-choice,.dlm-next{transition:none}}
+
 </style>
 </head>
 
@@ -633,6 +653,69 @@ Estado de México.
 </p>
 
 </footer>
+
+
+<!-- Club de criaturas: toca un personaje para descubrir información o jugar -->
+<div class="dlm-creatures" aria-label="Club interactivo">
+  <button class="dlm-creature" type="button" data-dlm="dia">💀 Calaquita</button>
+  <button class="dlm-creature" type="button" data-dlm="tradicion">🦇 Murciélago curioso</button>
+  <button class="dlm-creature" type="button" data-dlm="reto">🧟 Zombi de retos</button>
+</div>
+<div class="dlm-panel" id="dlmPanel" role="dialog" aria-modal="true" aria-labelledby="dlmTitle">
+  <div class="dlm-dialog">
+    <button class="dlm-close" type="button" aria-label="Cerrar panel" id="dlmClose">×</button>
+    <h2 id="dlmTitle">¡Bienvenidos al club!</h2>
+    <div id="dlmBody"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var panel=document.getElementById('dlmPanel'), title=document.getElementById('dlmTitle'), body=document.getElementById('dlmBody');
+  if(!panel||!title||!body)return;
+  var questions=[
+    {q:'¿Qué flor naranja se usa mucho para adornar las ofrendas?',a:['Cempasúchil','Rosa azul','Girasol morado'],correct:0,why:'¡Eso es! El cempasúchil es una flor muy representativa de las ofrendas.'},
+    {q:'¿Qué se coloca en una ofrenda para recordar a seres queridos?',a:['Recuerdos y fotografías','Juguetes al azar','Solo libros nuevos'],correct:0,why:'¡Muy bien! Las ofrendas pueden incluir fotografías, comida y objetos significativos.'},
+    {q:'¿En qué fechas se celebra tradicionalmente el Día de Muertos?',a:['1 y 2 de noviembre','14 de febrero','31 de diciembre'],correct:0,why:'¡Correcto! La tradición se vive principalmente el 1 y 2 de noviembre.'}
+  ];
+  var current=0,score=0,answered=false;
+  function open(key){
+    panel.classList.add('open'); panel.setAttribute('aria-hidden','false');
+    if(key==='dia'){
+      title.textContent='💀 La Calaquita cuenta';
+      body.innerHTML='<p><strong>¿Sabías que…?</strong> En México, el Día de Muertos es una tradición para recordar con cariño a quienes ya no están. Las familias preparan ofrendas con fotografías, velas, flores, comida y recuerdos especiales.</p><p>La calaverita no tiene que dar miedo: en el arte mexicano puede representar memoria, alegría y celebración de la vida.</p><p>🎨 <strong>Mini misión:</strong> piensa en un recuerdo bonito de alguien de tu familia y dibuja una flor para tu ofrenda imaginaria.</p>';
+    } else if(key==='tradicion'){
+      title.textContent='🦇 El murciélago explorador';
+      body.innerHTML='<p><strong>Un viaje por la tradición:</strong></p><ul><li>🌼 <strong>Cempasúchil:</strong> su color brillante adorna caminos y altares.</li><li>🕯️ <strong>Velas:</strong> simbolizan luz y recuerdo.</li><li>🍞 <strong>Pan de muerto:</strong> pan tradicional que muchas familias comparten.</li><li>📷 <strong>Fotografías:</strong> ayudan a recordar a nuestros seres queridos.</li></ul><p>Las costumbres cambian de una región a otra; lo importante es conocerlas y respetarlas.</p>';
+    } else {
+      current=0;score=0;answered=false; renderQuestion();
+      title.textContent='🧟 ¡Reto monstruosamente divertido!';
+    }
+  }
+  function renderQuestion(){
+    var q=questions[current]; answered=false;
+    body.innerHTML='<p><strong>Pregunta '+(current+1)+' de '+questions.length+'</strong></p><div class="dlm-progress"><span style="width:'+((current/questions.length)*100)+'%"></span></div><p>'+q.q+'</p><div class="dlm-actions" id="dlmChoices"></div><p class="dlm-feedback" id="dlmFeedback" aria-live="polite"></p><div class="dlm-actions"><button class="dlm-next" id="dlmNext" type="button" disabled>'+(current===questions.length-1?'Ver resultado':'Siguiente pregunta')+'</button></div>';
+    q.a.forEach(function(answer,index){
+      var b=document.createElement('button');b.type='button';b.className='dlm-choice';b.textContent=answer;
+      b.addEventListener('click',function(){
+        if(answered)return;answered=true;
+        var f=document.getElementById('dlmFeedback');
+        if(index===q.correct){score++;f.textContent='⭐ '+q.why;}else{f.textContent='¡Buen intento! '+q.why;}
+        document.querySelectorAll('#dlmChoices button').forEach(function(btn){btn.disabled=true;btn.style.opacity='.75'});
+        document.getElementById('dlmNext').disabled=false;
+      });document.getElementById('dlmChoices').appendChild(b);
+    });
+    document.getElementById('dlmNext').addEventListener('click',function(){
+      if(!answered)return;
+      if(current<questions.length-1){current++;renderQuestion();}
+      else{body.innerHTML='<h3>¡Reto terminado! 🎉</h3><p>Tu puntuación: <strong>'+score+' de '+questions.length+'</strong>.</p><p>'+(score===3?'¡Eres guardián o guardiana de las tradiciones!':score===2?'¡Muy bien! Ya conoces varias tradiciones.':'¡Gracias por jugar! Vuelve a intentarlo y descubre algo nuevo.')+'</p><div class="dlm-actions"><button class="dlm-next" id="dlmAgain" type="button">Jugar otra vez</button></div>';document.getElementById('dlmAgain').addEventListener('click',function(){current=0;score=0;renderQuestion()});}
+    });
+  }
+  document.querySelectorAll('[data-dlm]').forEach(function(btn){btn.addEventListener('click',function(){open(btn.getAttribute('data-dlm'))})});
+  document.getElementById('dlmClose').addEventListener('click',function(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')});
+  panel.addEventListener('click',function(e){if(e.target===panel){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')}});
+})();
+</script>
 
 </body>
 </html>
