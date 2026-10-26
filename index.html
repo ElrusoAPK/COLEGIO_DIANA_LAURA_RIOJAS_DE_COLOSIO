@@ -601,6 +601,22 @@ body.halloween-mode .halloween-ribbon span{font-size:1.25em;margin:0 8px}
 @media(max-width:520px){.dlm-creatures{left:8px;bottom:8px;gap:5px}.dlm-creature{font-size:12px;padding:8px 9px}.dlm-dialog{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){.dlm-creature,.dlm-choice,.dlm-next{transition:none}}
 
+
+/* Fondos más claros: inspiración en papel picado, flores y ofrendas */
+body.halloween-mode{background-color:#fff9ed!important;background-image:radial-gradient(circle at 8% 8%,#ffd16655 0 7px,transparent 8px),radial-gradient(circle at 92% 18%,#f5a7c655 0 9px,transparent 10px),linear-gradient(135deg,#fffaf0 0%,#fff3e1 48%,#f8efff 100%)!important;color:#382747!important}
+body.halloween-mode main,body.halloween-mode .container,body.halloween-mode .contenido,body.halloween-mode section,body.halloween-mode .section,body.halloween-mode .hero,body.halloween-mode .card,body.halloween-mode .tarjeta{background-image:none!important}
+body.halloween-mode main,body.halloween-mode section,body.halloween-mode .section{background-color:#fffaf2cc!important;border-radius:22px}
+body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nivel-card,body.halloween-mode .level-card{background:linear-gradient(145deg,#fff 0%,#fff4df 100%)!important;color:#382747!important;border:2px solid #f6c66b!important;box-shadow:0 10px 25px #5a356515!important}
+.dlm-level-game{position:relative;margin:26px auto;padding:22px;max-width:950px;border-radius:24px;background:linear-gradient(120deg,#fffdf6,#fff0d7 55%,#f8eaff);border:2px solid #f4bd58;box-shadow:0 12px 30px #3b1c4b14;color:#382747}
+.dlm-level-game h2{color:#65377e;margin-top:0}.dlm-level-game p{line-height:1.65}
+.dlm-level-open{background:#663582;color:#fff;border:0;border-radius:14px;padding:12px 18px;font-weight:800;cursor:pointer}
+.dlm-level-open:hover{background:#f28c28;color:#261635}
+.dlm-level-art{font-size:32px;letter-spacing:7px;margin:5px 0 12px}
+.dlm-level-modal{display:none;position:fixed;inset:0;z-index:4100;background:#21112bbd;padding:16px;align-items:center;justify-content:center}
+.dlm-level-modal.open{display:flex}.dlm-level-box{position:relative;background:#fffaf0;color:#382747;border:3px solid #f4bd58;border-radius:24px;padding:25px;width:min(600px,100%);max-height:85vh;overflow:auto}
+.dlm-level-box h2{color:#65377e}.dlm-level-box .dlm-close{top:10px;right:10px}
+@media(max-width:600px){.dlm-level-game{margin:18px 10px;padding:17px}.dlm-level-box{padding:20px 15px}}
+
 </style>
 
 </head>
@@ -1008,5 +1024,6 @@ menu.classList.remove('show');
 })();
 </script>
 
+<section class="dlm-level-game" aria-labelledby="dlmLevelHeading"><div class="dlm-level-art" aria-hidden="true">🌼 🕯️ 💀 🦇 🌼</div><h2 id="dlmLevelHeading">🎨 Reto de colores</h2><p>¡Toca el botón para abrir una actividad especial de Día de Muertos!</p><button class="dlm-level-open" type="button" id="dlmLevelOpen">🎨 Reto de colores — ¡Jugar!</button></section><div class="dlm-level-modal" id="dlmLevelModal" role="dialog" aria-modal="true" aria-labelledby="dlmLevelTitle"><div class="dlm-level-box"><button class="dlm-close" id="dlmLevelClose" type="button" aria-label="Cerrar">×</button><h2 id="dlmLevelTitle">🎨 Reto de colores y símbolos</h2><p>Encuentra en la página algo de color naranja, morado y amarillo. ¿Qué te recuerdan esos colores durante el Día de Muertos?</p><p><strong>Reto:</strong> toca los tres colores en tu imaginación y di un símbolo de la tradición para cada uno: flor, papel picado o vela.</p><button class='dlm-next' data-answer='¡Excelente! Los colores ayudan a decorar y expresar recuerdos.'>¡Terminé el reto!</button></div></div><script>(function(){var m=document.getElementById('dlmLevelModal');if(!m)return;document.getElementById('dlmLevelOpen').addEventListener('click',function(){m.classList.add('open')});document.getElementById('dlmLevelClose').addEventListener('click',function(){m.classList.remove('open')});m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open')});document.addEventListener('keydown',function(e){if(e.key==='Escape')m.classList.remove('open')});m.querySelectorAll('[data-correct]').forEach(function(b){b.addEventListener('click',function(){var f=m.querySelector('#levelFeedback');f.textContent=b.dataset.correct==='yes'?'¡Correcto! Aprender y respetar las tradiciones ayuda a mantener viva la cultura.':'¡Buen intento! Piensa en la pista y vuelve a elegir.'})});var pair=[];m.querySelectorAll('[data-pair]').forEach(function(b){b.addEventListener('click',function(){pair.push(b.dataset.pair);var f=m.querySelector('#levelFeedback');if(pair.length===2){f.textContent=pair[0]===pair[1]?'¡Encontraste la pareja! 🌟':'Casi, intenta encontrar dos dibujos iguales.';pair=[]}})});m.querySelectorAll('[data-answer]').forEach(function(b){b.addEventListener('click',function(){b.textContent='¡Buen trabajo! 🎉';b.insertAdjacentHTML('afterend','<p>'+b.dataset.answer+'</p>');b.disabled=true})})})();</script>
 </body>
 </html>
