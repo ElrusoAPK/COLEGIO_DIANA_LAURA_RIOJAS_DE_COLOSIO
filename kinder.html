@@ -380,6 +380,36 @@ body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nive
 .dlm-level-box h2{color:#65377e}.dlm-level-box .dlm-close{top:10px;right:10px}
 @media(max-width:600px){.dlm-level-game{margin:18px 10px;padding:17px}.dlm-level-box{padding:20px 15px}}
 
+
+/* Corrección visual Kinder: el fondo claro no debe borrar la imagen del hero ni el texto */
+body.halloween-mode .hero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:70vh!important;
+  background:
+    radial-gradient(circle at 12% 20%,#ffd166 0 7px,transparent 8px),
+    radial-gradient(circle at 85% 25%,#f7b6d2 0 11px,transparent 12px),
+    radial-gradient(circle at 75% 78%,#c9b7f5 0 10px,transparent 11px),
+    linear-gradient(135deg,#fff0ce 0%,#ffe3ed 48%,#e8ddff 100%)!important;
+}
+body.halloween-mode .hero::before{
+  content:"🌼  💀  🦋  🌼  🎀  🦇  🌼";
+  position:absolute;left:0;right:0;top:28px;text-align:center;
+  font-size:clamp(26px,4vw,48px);letter-spacing:8px;opacity:.95;
+  pointer-events:none;
+}
+body.halloween-mode .hero::after{
+  content:"🌼  🕯️  🌼  💀  🌼";
+  position:absolute;left:0;right:0;bottom:22px;text-align:center;
+  font-size:clamp(24px,3.5vw,42px);letter-spacing:10px;
+  pointer-events:none;
+}
+body.halloween-mode .hero-text{position:relative;z-index:1;color:#432354!important;text-shadow:none!important}
+body.halloween-mode .hero-text h1{color:#632d80!important;font-size:clamp(44px,6vw,68px)!important;text-shadow:0 2px #fff!important}
+body.halloween-mode .hero-text p{color:#50375c!important;font-weight:600;text-shadow:none!important}
+body.halloween-mode .halloween-ribbon{background:#fff0c9!important;color:#63377b!important}
+body.halloween-mode .section-title h2{color:#713a91!important}
+
 </style>
 </head>
 
