@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eventos escolares del Colegio Diana Laura Riojas de Colosio. Celebración del Día del Niño y actividades que fortalecen la convivencia.">
+<title>Eventos escolares | Colegio Diana Laura Riojas de Colosio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--morado:#4b1678;--morado2:#702db0;--naranja:#ff861c;--oro:#ffd166;--crema:#fff9ed;--texto:#301747}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,Arial,sans-serif;scroll-behavior:smooth}
+body{background:var(--crema);color:var(--texto);overflow-x:hidden}
+header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px clamp(16px,4vw,55px);background:linear-gradient(110deg,#25083e,#5a1b83,#35104d);box-shadow:0 8px 24px #21153235;border-bottom:3px solid var(--oro)}
+.brand{display:flex;align-items:center;gap:12px;color:white;font-weight:800;font-size:clamp(15px,2vw,22px);line-height:1.2;flex:1;min-width:200px}
+.brand-mark{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff4dc;color:var(--morado);font-size:28px;border:3px solid var(--oro)}
+.hamburger{border:0;border-radius:14px;padding:12px 16px;background:linear-gradient(135deg,var(--naranja),var(--oro));color:#2d1242;font-weight:800;cursor:pointer;box-shadow:0 5px 15px #0002}
+nav{display:none;flex-basis:100%;align-items:stretch;gap:8px;padding:12px;background:#35104d;border:1px solid #ffffff30;border-radius:18px}
+nav.open{display:flex;flex-direction:column}
+nav>a,.dropbtn{display:block;width:100%;border:0;border-radius:10px;padding:12px 14px;text-align:left;text-decoration:none;color:white;background:transparent;font-weight:700;cursor:pointer}
+nav>a:hover,.dropbtn:hover{background:#ffffff1c;color:var(--oro)}
+.dropdown{position:relative}
+.dropdown-content{display:none;background:#fffaf0;border:2px solid var(--oro);border-radius:12px;overflow:hidden;margin:4px 0 8px}
+.dropdown-content.show{display:block}
+.dropdown-content a{display:block;padding:11px 15px;text-decoration:none;color:#321849;font-weight:600}
+.dropdown-content a:hover{background:#f4d9ff;color:#4b1678}
+.hero{position:relative;overflow:hidden;padding:58px clamp(20px,5vw,70px) 64px;background:linear-gradient(110deg,#fff1c9ed,#fff8e8e8),url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover;border-bottom:6px solid var(--naranja)}
+.hero:after{content:"🌼 🎊 💜 🎈 🌼";display:block;text-align:center;font-size:clamp(25px,4vw,42px);margin-top:28px;letter-spacing:6px}
+.kicker{display:inline-block;background:#f4dcff;color:var(--morado);padding:7px 13px;border-radius:999px;font-weight:800}
+h1{font-size:clamp(38px,6vw,72px);line-height:1.05;color:#5a1b91;margin:17px 0 12px}
+.hero p{font-size:clamp(17px,2vw,22px);max-width:850px;line-height:1.7;font-weight:500}
+main{max-width:1500px;margin:auto;padding:30px clamp(14px,3vw,38px) 70px}
+.event-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:22px;margin:10px 0 28px}
+.panel{border-radius:24px;padding:clamp(22px,3vw,34px);box-shadow:0 10px 28px #35104d12;border:1px solid #f3d9a6}
+.panel h2{color:var(--morado);font-size:clamp(24px,3vw,34px);margin-bottom:13px}
+.panel p,.panel li{line-height:1.8;font-size:16px}
+.importancia{background:linear-gradient(135deg,#fff0bd,#fff9e9)}
+.datos{background:linear-gradient(135deg,#f9ddff,#fff0f8)}
+.datos ul{list-style:none;display:grid;gap:10px;margin-top:12px}
+.slogan{margin-top:18px;padding:15px;text-align:center;background:linear-gradient(100deg,#762db0,#4b1678);color:white;border-radius:16px;font-size:clamp(18px,2vw,24px);font-weight:800}
+.gallery-heading{text-align:center;margin:36px 0 22px}
+.gallery-heading h2{font-size:clamp(28px,4vw,42px);color:var(--morado)}
+.gallery-heading p{margin-top:8px;color:#6a5677}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.photo-card{overflow:hidden;border-radius:22px;background:white;border:1px solid #f0d5a2;box-shadow:0 12px 30px #35104d14;transition:transform .25s,box-shadow .25s}
+.photo-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px #35104d25}
+.photo-card img{display:block;width:100%;height:clamp(220px,32vw,390px);object-fit:cover;background:#eee}
+.caption{padding:18px 20px 21px}
+.caption h3{font-size:20px;color:var(--morado);margin-bottom:7px}
+.caption p{line-height:1.7;color:#594866}
+.event-placeholder{border:2px dashed #b99acb;background:#fff;border-radius:15px;padding:15px;color:#674d78;margin-top:12px;font-size:14px}
+.more-events{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.more-events a{display:block;padding:20px;border-radius:18px;text-decoration:none;color:var(--morado);font-weight:800;background:#fff;border:1px solid #efd7ff;box-shadow:0 5px 16px #35104d0d}
+.more-events a:hover{background:#f3e2ff}
+footer{text-align:center;background:#25083e;color:#fff;padding:30px 18px;border-top:5px solid var(--naranja);line-height:1.8}
+@media(max-width:760px){.event-intro{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.hero{padding-top:38px}.photo-card img{height:auto;max-height:440px;min-height:220px;object-fit:cover}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="brand-mark">🏫</div><div>Colegio Diana Laura Riojas de Colosio<br><small>Eventos que crean recuerdos</small></div></div>
+  <button class="hamburger" id="hamburger" type="button" aria-expanded="false" onclick="toggleMainMenu()">☰ MENÚ</button>
+  <nav id="mainNav" aria-label="Menú principal">
+    <a href="index.html">🏠 Inicio</a>
+    <div class="dropdown"><button class="dropbtn" type="button" onclick="toggleDrop('levelsMenu')">🎓 Niveles ▾</button>
+      <div class="dropdown-content" id="levelsMenu"><a href="kinder.html">🎈 Kinder</a><a href="primaria.html">📚 Primaria</a><a href="secundaria.html">🎓 Secundaria</a></div>
+    </div>
+    <div class="dropdown"><button class="dropbtn" type="button" onclick="toggleDrop('eventsMenu')">🎉 Eventos ▾</button>
+      <div class="dropdown-content show" id="eventsMenu"><a href="#dia-del-nino">🎉 Día del Niño</a><a href="#dia-de-muertos">💀 Día de Muertos</a><a href="#navidad">🎄 Navidad</a><a href="#graduaciones">🎓 Graduaciones</a><a href="#especiales">⭐ Actividades especiales</a></div>
+    </div>
+    <a href="#galeria">🖼️ Galería</a><a href="#contacto">✉️ Contacto</a>
+  </nav>
+</header>
+<section class="hero" id="dia-del-nino">
+  <span class="kicker">🎈 EVENTO ESCOLAR DESTACADO · 30 DE ABRIL</span>
+  <h1>¡Día del Niño!</h1>
+  <p>Porque su felicidad también es parte de nuestra educación. Celebramos la infancia con juegos, convivencia, creatividad y momentos que ayudan a nuestras niñas y niños a sentirse valorados.</p>
+</section>
+<main>
+  <section class="event-intro">
+    <article class="panel importancia">
+      <h2>🧒 ¿Por qué es importante festejar el Día del Niño?</h2>
+      <p>El Día del Niño es una oportunidad para reconocer la importancia de la infancia, escuchar a las niñas y los niños y recordar que tienen derecho a jugar, aprender, expresarse y crecer en un entorno seguro y afectuoso. En la escuela, esta celebración fortalece la autoestima, la convivencia, la empatía y el sentido de pertenencia. También permite que estudiantes, docentes y familias compartan experiencias positivas, descubran talentos y construyan recuerdos felices. Más que entregar regalos, festejarles significa hacerles sentir que su voz, sus ideas, su bienestar y sus derechos importan todos los días.</p>
+    </article>
+    <article class="panel datos">
+      <h2>⭐ Información del evento</h2>
+      <ul><li>📅 <strong>Fecha tradicional:</strong> 30 de abril en México.</li><li>👧 <strong>¿Quiénes participan?</strong> Niñas y niños de la comunidad escolar.</li><li>🎯 <strong>Propósito:</strong> compartir juegos, alegría y actividades inclusivas.</li><li>🤝 <strong>Valores:</strong> respeto, amistad, participación y compañerismo.</li></ul>
+      <div class="slogan">💜 Un niño feliz, aprende mejor 💛</div>
+    </article>
+  </section>
+  <section id="galeria">
+    <div class="gallery-heading"><h2>📸 Así celebramos juntos</h2><p>Recuerdos de convivencia, creatividad, juegos y aprendizaje en nuestra comunidad escolar.</p></div>
+    <div class="gallery">
+      <article class="photo-card"><img src="assets/dia-nino-1.jpg" alt="Niñas y niños reunidos en el patio escolar durante la celebración" loading="lazy"><div class="caption"><h3>🎈 Diversión en el patio del colegio</h3><p>El patio se convierte en un espacio de encuentro donde los estudiantes participan en dinámicas, juegos y momentos compartidos con sus compañeros y maestros. La convivencia ayuda a fortalecer la amistad y el sentido de comunidad.</p></div></article>
+      <article class="photo-card"><img src="assets/dia-nino-2.jpg" alt="Estudiantes y personal escolar con disfraces durante una actividad festiva" loading="lazy"><div class="caption"><h3>🌟 Talento, imaginación y creatividad</h3><p>Los disfraces y la participación en grupo permiten que los niños exploren su imaginación, se expresen y disfruten de una jornada distinta. Cada participante aporta entusiasmo y creatividad a la celebración.</p></div></article>
+      <article class="photo-card"><img src="assets/dia-nino-3.jpg" alt="Grupo de estudiantes en fila mostrando decoraciones y trabajos festivos" loading="lazy"><div class="caption"><h3>🎁 Juegos, sorpresas y participación</h3><p>Los trabajos, accesorios y sorpresas forman parte de una experiencia alegre que motiva a participar. Actividades como estas ofrecen oportunidades para compartir, esperar turnos, colaborar y celebrar los logros de todos.</p></div></article>
+      <article class="photo-card"><img src="assets/dia-nino-4.jpg" alt="Docentes acompañan a niñas y niños sentados durante una actividad escolar" loading="lazy"><div class="caption"><h3>💙 Aprender y convivir con alegría</h3><p>La convivencia entre docentes y estudiantes también enseña: escuchar, respetar, participar y cuidar a los demás. La celebración recuerda que el bienestar emocional y el respeto a los derechos de la infancia son parte de la educación.</p></div></article>
+    </div>
+    <p class="event-placeholder">Las fotografías se mostrarán al colocar los cuatro archivos de la galería en la carpeta <strong>assets</strong> del repositorio con los nombres indicados. El paquete de imágenes se entrega por separado para conservar las fotografías originales que compartiste.</p>
+  </section>
+  <section class="more-events" aria-label="Otras categorías de eventos">
+    <a id="dia-de-muertos" href="#dia-de-muertos">💀 Día de Muertos<br><small>Tradición, memoria y cultura</small></a>
+    <a id="navidad" href="#navidad">🎄 Navidad<br><small>Convivencia y solidaridad</small></a>
+    <a id="graduaciones" href="#graduaciones">🎓 Graduaciones<br><small>Celebrar el esfuerzo y los logros</small></a>
+    <a id="especiales" href="#especiales">⭐ Actividades especiales<br><small>Proyectos, talleres y encuentros</small></a>
+  </section>
+</main>
+<footer id="contacto"><strong>Colegio Diana Laura Riojas de Colosio</strong><br>Valle de Chalco Solidaridad, Estado de México<br>© 2026 · Celebramos la infancia y aprendemos en comunidad.</footer>
+<script>
+function toggleMainMenu(){var n=document.getElementById('mainNav'),b=document.getElementById('hamburger'),open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open))}
+function toggleDrop(id){var m=document.getElementById(id),was=m.classList.contains('show');document.querySelectorAll('.dropdown-content').forEach(function(x){x.classList.remove('show')});if(!was)m.classList.add('show')}
+document.addEventListener('click',function(e){if(!e.target.closest('nav'))document.querySelectorAll('.dropdown-content').forEach(function(x){x.classList.remove('show')})});
+</script>
+</body></html>
