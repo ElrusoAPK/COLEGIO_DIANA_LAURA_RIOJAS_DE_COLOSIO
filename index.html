@@ -617,6 +617,20 @@ body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nive
 .dlm-level-box h2{color:#65377e}.dlm-level-box .dlm-close{top:10px;right:10px}
 @media(max-width:600px){.dlm-level-game{margin:18px 10px;padding:17px}.dlm-level-box{padding:20px 15px}}
 
+
+/* MENÚ PRINCIPAL HAMBURGUESA + SUBMENÚS */
+.site-hamburger{display:inline-flex;align-items:center;gap:9px;border:0;border-radius:14px;padding:13px 17px;background:linear-gradient(135deg,#ff8a24,#ffd166);color:#28133d;font-weight:800;cursor:pointer;box-shadow:0 7px 18px #21153224;white-space:nowrap}
+.site-hamburger:hover{transform:translateY(-2px)}
+#siteNav{display:none;align-items:center;gap:10px;background:linear-gradient(135deg,#2b1047,#63268b);padding:14px;border:2px solid #ffd166;border-radius:20px;box-shadow:0 18px 45px #17092440}
+#siteNav.menu-open{display:flex;animation:fade .22s ease}
+#siteNav>a,#siteNav .dropbtn{color:#fff!important;padding:10px 12px;margin:0;border-radius:10px}
+#siteNav>a:hover,#siteNav .dropbtn:hover{background:#ffffff20;color:#ffd166!important}
+#siteNav .dropdown-content{top:calc(100% + 8px);left:0;z-index:1200;background:#fffaf0;border:2px solid #ffd166;min-width:220px}
+#siteNav .dropdown-content a{color:#321849!important;padding:13px 16px}
+#siteNav .dropdown-content a:hover{background:#713c85!important;color:white!important}
+@media(min-width:901px){header{gap:18px;flex-wrap:wrap}#siteNav.menu-open{display:flex}}
+@media(max-width:900px){header{padding:12px 18px!important;flex-wrap:wrap;justify-content:space-between}#siteNav{width:100%;flex-direction:column;align-items:stretch;order:3}#siteNav>a,#siteNav .dropbtn{text-align:left;width:100%;display:block}#siteNav .dropdown{width:100%}#siteNav .dropdown-content{position:static;width:100%;margin-top:5px;box-shadow:none}#siteNav .dropdown-content.show{display:block}.site-hamburger{margin-left:auto}}
+
 </style>
 
 </head>
@@ -641,30 +655,29 @@ Diana Laura Riojas de Colosio
 
 </div>
 
-<nav>
-
-<a href="index.html">Inicio</a>
-
-<div class="dropdown">
-
-<button class="dropbtn" onclick="toggleMenu()">
-Niveles ▼
-</button>
-
-<div class="dropdown-content" id="menuNiveles">
-
-<a href="kinder.html">Kinder</a>
-<a href="primaria.html">Primaria</a>
-<a href="secundaria.html">Secundaria</a>
-
-</div>
-
-</div>
-
-<a href="#vision">Visión</a>
-<a href="#metodos">Métodos</a>
-<a href="#contacto">Contacto</a>
-
+<button class="site-hamburger" id="siteHamburger" type="button" aria-label="Abrir menú" aria-expanded="false" onclick="toggleSiteMenu()">☰ <span>MENÚ</span></button>
+<nav id="siteNav" aria-label="Navegación principal">
+  <a href="index.html">Inicio</a>
+  <div class="dropdown">
+    <button class="dropbtn" type="button" onclick="toggleSubmenu('menuNiveles')">Niveles ▾</button>
+    <div class="dropdown-content" id="menuNiveles">
+      <a href="kinder.html">🎈 Kinder</a>
+      <a href="primaria.html">📚 Primaria</a>
+      <a href="secundaria.html">🎓 Secundaria</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" type="button" onclick="toggleSubmenu('menuEventos')">Eventos ▾</button>
+    <div class="dropdown-content" id="menuEventos">
+      <a href="eventos.html#dia-del-nino">🎉 Día del Niño</a>
+      <a href="eventos.html#dia-de-muertos">💀 Día de Muertos</a>
+      <a href="eventos.html#navidad">🎄 Navidad</a>
+      <a href="eventos.html#graduaciones">🎓 Graduaciones</a>
+      <a href="eventos.html#especiales">⭐ Actividades especiales</a>
+    </div>
+  </div>
+  <a href="eventos.html">Galería de eventos</a>
+  <a href="#contacto">Contacto</a>
 </nav>
 
 </header>
@@ -692,6 +705,24 @@ Niveles ▼
     }
   });
 })();
+function toggleSiteMenu(){
+  var nav=document.getElementById('siteNav');
+  var btn=document.getElementById('siteHamburger');
+  var opened=nav.classList.toggle('menu-open');
+  btn.setAttribute('aria-expanded',String(opened));
+}
+function toggleSubmenu(id){
+  var target=document.getElementById(id);
+  var wasOpen=target.classList.contains('show');
+  document.querySelectorAll('#siteNav .dropdown-content').forEach(function(menu){menu.classList.remove('show')});
+  if(!wasOpen)target.classList.add('show');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('#siteNav')&&!e.target.closest('#siteHamburger')){
+    document.querySelectorAll('#siteNav .dropdown-content').forEach(function(menu){menu.classList.remove('show')});
+  }
+});
+
 </script>
 
 
