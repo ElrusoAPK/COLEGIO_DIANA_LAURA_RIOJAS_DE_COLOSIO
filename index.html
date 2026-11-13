@@ -589,48 +589,6 @@ Diana Laura Riojas de Colosio
 </nav>
 
 </header>
-<script>
-(function(){
-  var toggle=document.getElementById('halloweenToggle');
-  if(!toggle)return;
-  toggle.addEventListener('click',function(){
-    var active=document.body.classList.toggle('halloween-mode');
-    toggle.setAttribute('aria-pressed',String(active));
-    toggle.textContent=active?'✨ Modo mágico activado':'🎃 Modo Halloween';
-    if(active){
-      ['👻','🦇','✨','🎃','🍬'].forEach(function(symbol,index){
-        var spark=document.createElement('span');
-        spark.className='halloween-spark';
-        spark.textContent=symbol;
-        spark.style.left=(12+index*17)+'%';
-        spark.style.bottom='28px';
-        document.body.appendChild(spark);
-        window.setTimeout(function(){spark.remove()},1900);
-      });
-    }
-  });
-})();
-function toggleSiteMenu(){
-  var nav=document.getElementById('siteNav');
-  var btn=document.getElementById('siteHamburger');
-  var opened=nav.classList.toggle('menu-open');
-  btn.setAttribute('aria-expanded',String(opened));
-}
-function toggleSubmenu(id){
-  var target=document.getElementById(id);
-  var wasOpen=target.classList.contains('show');
-  document.querySelectorAll('#siteNav .dropdown-content').forEach(function(menu){menu.classList.remove('show')});
-  if(!wasOpen)target.classList.add('show');
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('#siteNav')&&!e.target.closest('#siteHamburger')){
-    document.querySelectorAll('#siteNav .dropdown-content').forEach(function(menu){menu.classList.remove('show')});
-  }
-});
-
-</script>
-
-
 <section class="hero">
 
 <div class="hero-text">
@@ -682,7 +640,7 @@ Comprometidos con la educación integral
 
 <div class="vision-mision">
 
-<div class="box halloween-card">
+<div class="box">
 
 <h2>Visión</h2>
 
@@ -695,7 +653,7 @@ de excelencia, valores y aprendizaje integral.
 
 </div>
 
-<div class="box halloween-card">
+<div class="box">
 
 <h2>Misión</h2>
 
@@ -724,9 +682,9 @@ Modelos educativos aplicados en cada nivel
 
 </div>
 
-<div class="campos halloween-card">
+<div class="campos">
 
-<div class="campo rosa halloween-card">
+<div class="campo rosa">
 
 <h3>Kinder</h3>
 
@@ -748,7 +706,7 @@ en lectura y desarrollo cerebral.
 
 </div>
 
-<div class="campo verde halloween-card">
+<div class="campo verde">
 
 <h3>Primaria</h3>
 
@@ -768,7 +726,7 @@ Fortalece trabajo en equipo.
 
 </div>
 
-<div class="campo azul halloween-card">
+<div class="campo azul">
 
 <h3>Secundaria</h3>
 
@@ -814,7 +772,7 @@ Estamos para ayudarte
 
 <div class="contactos">
 
-<div class="contact-card halloween-card">
+<div class="contact-card">
 
 <h4>Dirección Escolar</h4>
 
@@ -822,7 +780,7 @@ Estamos para ayudarte
 
 </div>
 
-<div class="contact-card halloween-card">
+<div class="contact-card">
 
 <h4>Control Escolar</h4>
 
@@ -830,7 +788,7 @@ Estamos para ayudarte
 
 </div>
 
-<div class="contact-card halloween-card">
+<div class="contact-card">
 
 <h4>Informes e Inscripciones</h4>
 
