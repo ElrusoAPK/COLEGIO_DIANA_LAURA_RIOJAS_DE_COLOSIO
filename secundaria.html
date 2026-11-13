@@ -296,126 +296,10 @@ footer p{
 }
 
 
-/* EDICIÓN HALLOWEEN INTEGRADA */
-:root{--halloween-night:#211532;--halloween-purple:#593078;--halloween-orange:#ff8a24;--halloween-gold:#ffd166}
-.halloween-ribbon{position:relative;z-index:2;text-align:center;padding:12px 18px;background:linear-gradient(90deg,var(--halloween-night),var(--halloween-purple),var(--halloween-night));color:#fff3dc;font-weight:800;letter-spacing:.3px;border-bottom:3px solid var(--halloween-orange)}
-.halloween-ribbon span{display:inline-block;animation:spookyBob 2.8s ease-in-out infinite}
-.halloween-card{position:relative;overflow:hidden}
-.halloween-card:after{content:"✦";position:absolute;right:16px;top:10px;color:#ff9b35;font-size:22px;opacity:.75;transition:transform .3s}
-.halloween-card:hover:after{transform:rotate(90deg) scale(1.25)}
-.halloween-toggle{position:fixed;right:18px;bottom:18px;z-index:2000;border:2px solid #ffd166;border-radius:999px;background:#211532;color:#fff;padding:12px 16px;font:700 14px inherit;box-shadow:0 8px 24px #21153240;cursor:pointer;transition:transform .2s,background .2s}
-.halloween-toggle:hover{transform:translateY(-4px) rotate(-2deg);background:#593078}
-.halloween-toggle:focus-visible{outline:3px solid #ff8a24;outline-offset:4px}
-body.halloween-mode{background:#fff8ed;color:#2b1a3b}
-body.halloween-mode header{background:linear-gradient(110deg,#211532,#593078)!important;color:white}
-body.halloween-mode .section-title h2,body.halloween-mode .hero-text h3,body.halloween-mode .contact-card h4{color:#a653d4}
-body.halloween-mode .box,body.halloween-mode .campo,body.halloween-mode .req,body.halloween-mode .contact-card{border-color:#ffd166;box-shadow:0 12px 30px #59307818}
-body.halloween-mode .box:hover,body.halloween-mode .campo:hover,body.halloween-mode .contact-card:hover{transform:translateY(-8px) rotate(-.4deg)}
-.halloween-spark{position:fixed;z-index:1999;pointer-events:none;font-size:22px;animation:spookyRise 1.8s ease-out forwards}
-@keyframes spookyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-@keyframes spookyRise{from{opacity:1;transform:translateY(0) rotate(0)}to{opacity:0;transform:translateY(-100px) rotate(25deg)}}
-@media(prefers-reduced-motion:reduce){.halloween-ribbon span,.halloween-spark{animation:none!important}.halloween-toggle{transition:none}}
-
-
-/* TEMA HALLOWEEN PREDETERMINADO: visible desde la primera visita */
-body.halloween-mode{background:#fff8ed;color:#2a183b}
-body.halloween-mode header{background:linear-gradient(105deg,#1b102b 0%,#42205e 65%,#713c85 100%)!important;color:#fff;box-shadow:0 8px 28px #1b102b40;border-bottom:3px solid #ff8a24}
-body.halloween-mode nav a,body.halloween-mode .dropbtn{color:#fff!important}
-body.halloween-mode nav a:hover,body.halloween-mode .dropbtn:hover{color:#ffd166!important}
-body.halloween-mode .hero{background-image:radial-gradient(circle at 85% 20%,#ff8a2440 0,transparent 28%),linear-gradient(135deg,rgba(27,16,43,.88),rgba(66,32,94,.82)),url('https://images.unsplash.com/photo-1509557965875-b88c97052f0e?q=80&w=1600');background-position:center;background-size:cover;color:white}
-body.halloween-mode .hero-text h1,body.halloween-mode .hero-text p{color:#fff}
-body.halloween-mode .hero-text h3{color:#ffd166}
-body.halloween-mode .hero-text span{color:#ff9b35;text-shadow:0 3px 0 #0002}
-body.halloween-mode .btn1,body.halloween-mode .btn2{background:linear-gradient(135deg,#ff8a24,#ffd166);color:#271536;border:0;box-shadow:0 8px 24px #ff8a2440}
-body.halloween-mode .section:nth-of-type(even){background:linear-gradient(180deg,#fff8ed,#f3e8ff)}
-body.halloween-mode .section-title h2{color:#6e328e;text-shadow:0 3px 0 #ff8a241c}
-body.halloween-mode .section-title p{color:#62516e}
-body.halloween-mode .box,body.halloween-mode .campo,body.halloween-mode .req,body.halloween-mode .talleres,body.halloween-mode .contact-box{background:linear-gradient(145deg,#fff,#fff8ed);border:1px solid #ead7f7;border-top:6px solid #ff8a24;box-shadow:0 15px 35px #32144915}
-body.halloween-mode .campo h3,body.halloween-mode .box h2,body.halloween-mode .req h3{color:#713c85}
-body.halloween-mode .contact-card{background:linear-gradient(145deg,#fff4df,#f4e8ff)!important;border:2px solid #ffcf8a!important}
-body.halloween-mode .contact-card h4{color:#713c85}
-body.halloween-mode footer{background:radial-gradient(circle at 50% 0,#593078,#1b102b 70%);border-top:5px solid #ff8a24}
-body.halloween-mode .halloween-ribbon{background:linear-gradient(90deg,#1b102b,#713c85,#1b102b);border-bottom:3px solid #ffd166;font-size:clamp(12px,1.6vw,16px);padding:15px}
-body.halloween-mode .halloween-toggle{background:linear-gradient(135deg,#ff8a24,#ffd166);color:#271536;border:2px solid white;box-shadow:0 10px 28px #21153250}
-body.halloween-mode .halloween-card{border-radius:24px}
-body.halloween-mode .halloween-card:hover{outline:2px solid #ffbd62;outline-offset:2px}
-body.halloween-mode .logo img{filter:drop-shadow(0 0 8px #ffd16655)}
-body.halloween-mode .card{border:3px solid #ffd166}
-body.halloween-mode .section-title h2:after{content:"  ✦ 🎃";font-size:.58em;color:#ff8a24}
-body.halloween-mode .halloween-ribbon span{font-size:1.25em;margin:0 8px}
-@media(max-width:700px){body.halloween-mode .hero{background-position:center}body.halloween-mode .halloween-toggle{right:10px;bottom:10px;padding:10px 12px;font-size:12px}}
-
-
-/* CLUB INTERACTIVO: criaturas que abren paneles y retos */
-.dlm-creatures{position:fixed;left:14px;bottom:14px;z-index:2500;display:flex;gap:8px;flex-wrap:wrap;max-width:calc(100vw - 28px)}
-.dlm-creature{border:2px solid #ffd166;background:#241333;color:#fff;border-radius:18px;padding:9px 12px;font:700 14px inherit;cursor:pointer;box-shadow:0 5px 16px #21153240;transition:transform .2s}
-.dlm-creature:hover,.dlm-creature:focus-visible{transform:translateY(-4px) rotate(-2deg);outline:3px solid #ff8a24;outline-offset:2px}
-.dlm-panel{display:none;position:fixed;inset:0;z-index:4000;background:#160c24b8;padding:18px;align-items:center;justify-content:center}
-.dlm-panel.open{display:flex}
-.dlm-dialog{position:relative;width:min(620px,100%);max-height:85vh;overflow:auto;background:linear-gradient(145deg,#fffaf0,#f4e8ff);color:#29163b;border:3px solid #ff9a2f;border-radius:24px;padding:25px;box-shadow:0 20px 70px #0005}
-.dlm-dialog h2{font-size:clamp(22px,4vw,32px);color:#633080;margin:0 42px 12px 0}
-.dlm-dialog p,.dlm-dialog li{line-height:1.65}
-.dlm-close{position:absolute;right:14px;top:12px;border:0;border-radius:50%;width:38px;height:38px;background:#2a173b;color:white;font-size:23px;cursor:pointer}
-.dlm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
-.dlm-choice,.dlm-next{border:0;border-radius:13px;background:#67358a;color:white;font-weight:700;padding:12px 15px;cursor:pointer}
-.dlm-choice:hover,.dlm-next:hover{background:#ff8a24;color:#211532}
-.dlm-feedback{font-weight:700;min-height:28px;margin-top:12px;padding:8px;border-radius:10px;background:#fff}
-.dlm-progress{height:9px;border-radius:99px;background:#e5d6ef;overflow:hidden;margin:12px 0}
-.dlm-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff8a24,#ffd166);transition:width .3s}
-@media(max-width:520px){.dlm-creatures{left:8px;bottom:8px;gap:5px}.dlm-creature{font-size:12px;padding:8px 9px}.dlm-dialog{padding:20px 16px}}
-@media(prefers-reduced-motion:reduce){.dlm-creature,.dlm-choice,.dlm-next{transition:none}}
-
-
-/* Fondos más claros: inspiración en papel picado, flores y ofrendas */
-body.halloween-mode{background-color:#fff9ed!important;background-image:radial-gradient(circle at 8% 8%,#ffd16655 0 7px,transparent 8px),radial-gradient(circle at 92% 18%,#f5a7c655 0 9px,transparent 10px),linear-gradient(135deg,#fffaf0 0%,#fff3e1 48%,#f8efff 100%)!important;color:#382747!important}
-body.halloween-mode main,body.halloween-mode .container,body.halloween-mode .contenido,body.halloween-mode section,body.halloween-mode .section,body.halloween-mode .hero,body.halloween-mode .card,body.halloween-mode .tarjeta{background-image:none!important}
-body.halloween-mode main,body.halloween-mode section,body.halloween-mode .section{background-color:#fffaf2cc!important;border-radius:22px}
-body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nivel-card,body.halloween-mode .level-card{background:linear-gradient(145deg,#fff 0%,#fff4df 100%)!important;color:#382747!important;border:2px solid #f6c66b!important;box-shadow:0 10px 25px #5a356515!important}
-.dlm-level-game{position:relative;margin:26px auto;padding:22px;max-width:950px;border-radius:24px;background:linear-gradient(120deg,#fffdf6,#fff0d7 55%,#f8eaff);border:2px solid #f4bd58;box-shadow:0 12px 30px #3b1c4b14;color:#382747}
-.dlm-level-game h2{color:#65377e;margin-top:0}.dlm-level-game p{line-height:1.65}
-.dlm-level-open{background:#663582;color:#fff;border:0;border-radius:14px;padding:12px 18px;font-weight:800;cursor:pointer}
-.dlm-level-open:hover{background:#f28c28;color:#261635}
-.dlm-level-art{font-size:32px;letter-spacing:7px;margin:5px 0 12px}
-.dlm-level-modal{display:none;position:fixed;inset:0;z-index:4100;background:#21112bbd;padding:16px;align-items:center;justify-content:center}
-.dlm-level-modal.open{display:flex}.dlm-level-box{position:relative;background:#fffaf0;color:#382747;border:3px solid #f4bd58;border-radius:24px;padding:25px;width:min(600px,100%);max-height:85vh;overflow:auto}
-.dlm-level-box h2{color:#65377e}.dlm-level-box .dlm-close{top:10px;right:10px}
-@media(max-width:600px){.dlm-level-game{margin:18px 10px;padding:17px}.dlm-level-box{padding:20px 15px}}
-
-
-/* Fondo fotográfico claro de Día de Muertos para Primaria y Secundaria */
-body.halloween-mode .hero{
-  position:relative!important;
-  overflow:hidden!important;
-  min-height:70vh!important;
-  background-image:
-    linear-gradient(90deg,rgba(255,250,239,.78),rgba(255,248,238,.62)),
-    url('https://images.pexels.com/photos/29407694/pexels-photo-29407694.jpeg?auto=compress&cs=tinysrgb&w=1800')!important;
-  background-size:cover!important;
-  background-position:center 45%!important;
-  background-repeat:no-repeat!important;
-}
-body.halloween-mode .hero::before{
-  content:"🌼  🎊  💀  🌼  🦋  🌼";
-  position:absolute;left:0;right:0;top:20px;text-align:center;
-  font-size:clamp(25px,4vw,45px);letter-spacing:7px;
-  text-shadow:0 2px 5px #fff8e9;pointer-events:none;
-}
-body.halloween-mode .hero::after{
-  content:"🌼  🕯️  🌼  🎀  🌼";
-  position:absolute;left:0;right:0;bottom:18px;text-align:center;
-  font-size:clamp(23px,3.5vw,40px);letter-spacing:8px;
-  text-shadow:0 2px 5px #fff8e9;pointer-events:none;
-}
-body.halloween-mode .hero-text{position:relative;z-index:1;color:#42234f!important;text-shadow:0 1px 2px #fff!important}
-body.halloween-mode .hero-text h1{color:#642d80!important;font-size:clamp(44px,6vw,68px)!important;text-shadow:0 2px #fff!important}
-body.halloween-mode .hero-text p{color:#382747!important;font-weight:700!important;text-shadow:0 1px 3px #fff!important}
-body.halloween-mode main,body.halloween-mode .container,body.halloween-mode .contenido,body.halloween-mode section,body.halloween-mode .section{background-color:#fffaf0dd!important}
-body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nivel-card,body.halloween-mode .level-card{background:linear-gradient(145deg,#fffefa,#fff0d9)!important;color:#382747!important;border-color:#f3c86d!important}
-
 </style>
 </head>
 
-<body class="halloween-mode">
+<body>
 
 <header>
 
@@ -431,9 +315,6 @@ body.halloween-mode .card,body.halloween-mode .tarjeta,body.halloween-mode .nive
 </nav>
 
 </header>
-
-<div class="halloween-ribbon" role="note"><span>🎃</span> Octubre mágico · ¡Aprendemos, creamos y nos divertimos! <span>🦇</span></div>
-<button class="halloween-toggle" id="halloweenToggle" type="button" aria-pressed="true" aria-label="Activar o desactivar el modo Halloween">✨ Halloween activado</button>
 <script>
 (function(){
   var toggle=document.getElementById('halloweenToggle');
@@ -683,68 +564,8 @@ Estado de México.
 </footer>
 
 
-<!-- Club de criaturas: toca un personaje para descubrir información o jugar -->
-<div class="dlm-creatures" aria-label="Club interactivo">
-  <button class="dlm-creature" type="button" data-dlm="dia">💀 Calaquita</button>
-  <button class="dlm-creature" type="button" data-dlm="tradicion">🦇 Murciélago curioso</button>
-  <button class="dlm-creature" type="button" data-dlm="reto">🧟 Zombi de retos</button>
-</div>
-<div class="dlm-panel" id="dlmPanel" role="dialog" aria-modal="true" aria-labelledby="dlmTitle">
-  <div class="dlm-dialog">
-    <button class="dlm-close" type="button" aria-label="Cerrar panel" id="dlmClose">×</button>
-    <h2 id="dlmTitle">¡Bienvenidos al club!</h2>
-    <div id="dlmBody"></div>
-  </div>
-</div>
-<script>
-(function(){
-  var panel=document.getElementById('dlmPanel'), title=document.getElementById('dlmTitle'), body=document.getElementById('dlmBody');
-  if(!panel||!title||!body)return;
-  var questions=[
-    {q:'¿Qué flor naranja se usa mucho para adornar las ofrendas?',a:['Cempasúchil','Rosa azul','Girasol morado'],correct:0,why:'¡Eso es! El cempasúchil es una flor muy representativa de las ofrendas.'},
-    {q:'¿Qué se coloca en una ofrenda para recordar a seres queridos?',a:['Recuerdos y fotografías','Juguetes al azar','Solo libros nuevos'],correct:0,why:'¡Muy bien! Las ofrendas pueden incluir fotografías, comida y objetos significativos.'},
-    {q:'¿En qué fechas se celebra tradicionalmente el Día de Muertos?',a:['1 y 2 de noviembre','14 de febrero','31 de diciembre'],correct:0,why:'¡Correcto! La tradición se vive principalmente el 1 y 2 de noviembre.'}
-  ];
-  var current=0,score=0,answered=false;
-  function open(key){
-    panel.classList.add('open'); panel.setAttribute('aria-hidden','false');
-    if(key==='dia'){
-      title.textContent='💀 La Calaquita cuenta';
-      body.innerHTML='<p><strong>¿Sabías que…?</strong> En México, el Día de Muertos es una tradición para recordar con cariño a quienes ya no están. Las familias preparan ofrendas con fotografías, velas, flores, comida y recuerdos especiales.</p><p>La calaverita no tiene que dar miedo: en el arte mexicano puede representar memoria, alegría y celebración de la vida.</p><p>🎨 <strong>Mini misión:</strong> piensa en un recuerdo bonito de alguien de tu familia y dibuja una flor para tu ofrenda imaginaria.</p>';
-    } else if(key==='tradicion'){
-      title.textContent='🦇 El murciélago explorador';
-      body.innerHTML='<p><strong>Un viaje por la tradición:</strong></p><ul><li>🌼 <strong>Cempasúchil:</strong> su color brillante adorna caminos y altares.</li><li>🕯️ <strong>Velas:</strong> simbolizan luz y recuerdo.</li><li>🍞 <strong>Pan de muerto:</strong> pan tradicional que muchas familias comparten.</li><li>📷 <strong>Fotografías:</strong> ayudan a recordar a nuestros seres queridos.</li></ul><p>Las costumbres cambian de una región a otra; lo importante es conocerlas y respetarlas.</p>';
-    } else {
-      current=0;score=0;answered=false; renderQuestion();
-      title.textContent='🧟 ¡Reto monstruosamente divertido!';
-    }
-  }
-  function renderQuestion(){
-    var q=questions[current]; answered=false;
-    body.innerHTML='<p><strong>Pregunta '+(current+1)+' de '+questions.length+'</strong></p><div class="dlm-progress"><span style="width:'+((current/questions.length)*100)+'%"></span></div><p>'+q.q+'</p><div class="dlm-actions" id="dlmChoices"></div><p class="dlm-feedback" id="dlmFeedback" aria-live="polite"></p><div class="dlm-actions"><button class="dlm-next" id="dlmNext" type="button" disabled>'+(current===questions.length-1?'Ver resultado':'Siguiente pregunta')+'</button></div>';
-    q.a.forEach(function(answer,index){
-      var b=document.createElement('button');b.type='button';b.className='dlm-choice';b.textContent=answer;
-      b.addEventListener('click',function(){
-        if(answered)return;answered=true;
-        var f=document.getElementById('dlmFeedback');
-        if(index===q.correct){score++;f.textContent='⭐ '+q.why;}else{f.textContent='¡Buen intento! '+q.why;}
-        document.querySelectorAll('#dlmChoices button').forEach(function(btn){btn.disabled=true;btn.style.opacity='.75'});
-        document.getElementById('dlmNext').disabled=false;
-      });document.getElementById('dlmChoices').appendChild(b);
-    });
-    document.getElementById('dlmNext').addEventListener('click',function(){
-      if(!answered)return;
-      if(current<questions.length-1){current++;renderQuestion();}
-      else{body.innerHTML='<h3>¡Reto terminado! 🎉</h3><p>Tu puntuación: <strong>'+score+' de '+questions.length+'</strong>.</p><p>'+(score===3?'¡Eres guardián o guardiana de las tradiciones!':score===2?'¡Muy bien! Ya conoces varias tradiciones.':'¡Gracias por jugar! Vuelve a intentarlo y descubre algo nuevo.')+'</p><div class="dlm-actions"><button class="dlm-next" id="dlmAgain" type="button">Jugar otra vez</button></div>';document.getElementById('dlmAgain').addEventListener('click',function(){current=0;score=0;renderQuestion()});}
-    });
-  }
-  document.querySelectorAll('[data-dlm]').forEach(function(btn){btn.addEventListener('click',function(){open(btn.getAttribute('data-dlm'))})});
-  document.getElementById('dlmClose').addEventListener('click',function(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')});
-  panel.addEventListener('click',function(e){if(e.target===panel){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')}});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')}});
-})();
-</script>
 
-<section class="dlm-level-game" aria-labelledby="dlmLevelHeading"><div class="dlm-level-art" aria-hidden="true">🌼 🕯️ 💀 🦇 🌼</div><h2 id="dlmLevelHeading">🔎 Misión cultural</h2><p>¡Toca el botón para abrir una actividad especial de Día de Muertos!</p><button class="dlm-level-open" type="button" id="dlmLevelOpen">🔎 Misión cultural — ¡Jugar!</button></section><div class="dlm-level-modal" id="dlmLevelModal" role="dialog" aria-modal="true" aria-labelledby="dlmLevelTitle"><div class="dlm-level-box"><button class="dlm-close" id="dlmLevelClose" type="button" aria-label="Cerrar">×</button><h2 id="dlmLevelTitle">🔎 Misión: tradición y respeto</h2><p>¿Cuál es una forma respetuosa de aprender sobre el Día de Muertos?</p><div class='dlm-actions'><button class='dlm-choice' data-correct='no'>Decir que todas las familias lo celebran igual</button><button class='dlm-choice' data-correct='yes'>Investigar las tradiciones de distintas regiones y escuchar a las familias</button><button class='dlm-choice' data-correct='no'>Burlarse de las ofrendas</button></div><p class='dlm-feedback' id='levelFeedback' aria-live='polite'>Elige tu respuesta y descubre la explicación.</p></div></div><script>(function(){var m=document.getElementById('dlmLevelModal');if(!m)return;document.getElementById('dlmLevelOpen').addEventListener('click',function(){m.classList.add('open')});document.getElementById('dlmLevelClose').addEventListener('click',function(){m.classList.remove('open')});m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open')});document.addEventListener('keydown',function(e){if(e.key==='Escape')m.classList.remove('open')});m.querySelectorAll('[data-correct]').forEach(function(b){b.addEventListener('click',function(){var f=m.querySelector('#levelFeedback');f.textContent=b.dataset.correct==='yes'?'¡Correcto! Aprender y respetar las tradiciones ayuda a mantener viva la cultura.':'¡Buen intento! Piensa en la pista y vuelve a elegir.'})});var pair=[];m.querySelectorAll('[data-pair]').forEach(function(b){b.addEventListener('click',function(){pair.push(b.dataset.pair);var f=m.querySelector('#levelFeedback');if(pair.length===2){f.textContent=pair[0]===pair[1]?'¡Encontraste la pareja! 🌟':'Casi, intenta encontrar dos dibujos iguales.';pair=[]}})});m.querySelectorAll('[data-answer]').forEach(function(b){b.addEventListener('click',function(){b.textContent='¡Buen trabajo! 🎉';b.insertAdjacentHTML('afterend','<p>'+b.dataset.answer+'</p>');b.disabled=true})})})();</script>
+
+
 </body>
 </html>
