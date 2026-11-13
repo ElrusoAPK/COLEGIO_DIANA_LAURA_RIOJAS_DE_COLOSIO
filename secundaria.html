@@ -315,30 +315,6 @@ footer p{
 </nav>
 
 </header>
-<script>
-(function(){
-  var toggle=document.getElementById('halloweenToggle');
-  if(!toggle)return;
-  toggle.addEventListener('click',function(){
-    var active=document.body.classList.toggle('halloween-mode');
-    toggle.setAttribute('aria-pressed',String(active));
-    toggle.textContent=active?'✨ Modo mágico activado':'🎃 Modo Halloween';
-    if(active){
-      ['👻','🦇','✨','🎃','🍬'].forEach(function(symbol,index){
-        var spark=document.createElement('span');
-        spark.className='halloween-spark';
-        spark.textContent=symbol;
-        spark.style.left=(12+index*17)+'%';
-        spark.style.bottom='28px';
-        document.body.appendChild(spark);
-        window.setTimeout(function(){spark.remove()},1900);
-      });
-    }
-  });
-})();
-</script>
-
-
 <!-- HERO -->
 
 <section class="hero">
@@ -425,9 +401,9 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campos halloween-card">
+<div class="campos">
 
-<div class="campo verde halloween-card">
+<div class="campo verde">
 
 <h3>
 1. Lenguajes
@@ -441,7 +417,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo azul halloween-card">
+<div class="campo azul">
 
 <h3>
 2. Saberes y Pensamiento Científico
@@ -456,7 +432,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo rosa halloween-card">
+<div class="campo rosa">
 
 <h3>
 3. Ética, Naturaleza y Sociedad
@@ -470,7 +446,7 @@ Campos formativos y talleres educativos.
 
 </div>
 
-<div class="campo amarillo halloween-card">
+<div class="campo amarillo">
 
 <h3>
 4. De lo Humano y lo Comunitario
@@ -504,9 +480,9 @@ Documentación necesaria para alumnos y tutores.
 
 </div>
 
-<div class="requisitos halloween-card">
+<div class="requisitos">
 
-<div class="req halloween-card">
+<div class="req">
 
 <h3>
 Para los niños
@@ -524,7 +500,7 @@ Para los niños
 
 </div>
 
-<div class="req halloween-card">
+<div class="req">
 
 <h3>
 Padre de familia o tutor
